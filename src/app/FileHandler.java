@@ -6,7 +6,7 @@ import java.nio.file.Path;
 
 public class FileHandler {
 
-    private static String createFile(String strPath){
+    public String createFile(String strPath){
         Path newFile;
         try{
             newFile = Files.createFile(Path.of(strPath));
@@ -18,7 +18,7 @@ public class FileHandler {
         return newFile + "created";
     }
 
-    private static  String writeToFile(Path path, String content) {
+    public  String writeToFile(Path path, String content) {
         try {
             Files.writeString(path, content);
         } catch (IOException e) {
@@ -27,7 +27,7 @@ public class FileHandler {
         return "written into " + path;
     }
 
-    private static String readFromFile(String path){
+    public String readFromFile(String path){
 
         try {
             return Files.readString(Path.of(path));
